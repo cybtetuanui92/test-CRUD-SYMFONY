@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test backend SYMF!
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+	<div class="row justify-content-center mt-5">
+		{% set cards = [
+			{'id': 27, 'title': 'pêche Troc', 'text': 'This is a longer card with supporting text below.'},
+			{'id': 14, 'title': 'respire Troc', 'text': 'This is a longer card with supporting text below.'},
+			{'id': 31, 'title': 'marche Troc', 'text': 'This is a longer card with supporting text below.'},
+			{'id': 20, 'title': 'code Troc', 'text': 'This is a longer card with supporting text below.'}
+		] %}
+		{% for card in cards %}
+			<div class="col-sm-12 col-md-6 col-lg-3 mb-4">
+				<div class="card">
+					<img src="https://picsum.photos/id/{{ card.id }}/367/267" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">{{ card.title }}</h5>
+						<p class="card-text">{{ card.text }}</p>
+						<a href="#" class="btn btn-primary">Entrer</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
